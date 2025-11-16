@@ -3,15 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flames App</title>
+    <title>Flames Agency — Psychological Design Lab</title>
     <link rel="icon" type="image/x-icon" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-mono/style.css">
+    <style>
+      /* Subtle noise texture overlay */
+      .noise-overlay { background-image: url('data:image/svg+xml;utf8,\
+        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">\
+          <filter id="n">\
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>\
+            <feColorMatrix type="saturate" values="0"/>\
+            <feComponentTransfer>\
+              <feFuncA type="table" tableValues="0 0.05"/>\
+            </feComponentTransfer>\
+          </filter>\
+          <rect width="100%" height="100%" filter="url(%23n)"/>\
+        </svg>'); opacity: 0.05; pointer-events: none; }
+      /* Organic gradient mesh */
+      .gradient-mesh { background: radial-gradient(80% 80% at 60% 40%, rgba(44,95,77,0.35), rgba(26,26,26,0.6) 40%, rgba(26,26,26,1) 70%); animation: meshMorph 45s ease-in-out infinite; }
+    </style>
   </head>
-  <body>
+  <body class="bg-charcoal text-warm">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
